@@ -6,16 +6,16 @@
     <link rel="icon" type="image/x-icon" href="icon.png">
     <meta name="language" content="es-ES">
     <meta name="title" content="title">
-    <link type="text/css" rel="stylesheet" href="default.css">
-    <script type="text/javascript" src="jquery.min.js"></script>
-    <script type="text/javascript" src="jscex.min.js"></script>
-    <script type="text/javascript" src="jscex-parser.js"></script>
-    <script type="text/javascript" src="jscex-jit.js"></script>
-    <script type="text/javascript" src="jscex-builderbase.min.js"></script>
-    <script type="text/javascript" src="jscex-async.min.js"></script>
-    <script type="text/javascript" src="jscex-async-powerpack.min.js"></script>
-    <script type="text/javascript" src="functions.js" charset="utf-8"></script>
-    <script type="text/javascript" src="love.js" charset="utf-8"></script>
+    <link type="text/css" rel="stylesheet" href="Love_files/default.css">
+    <script type="text/javascript" src="Love_files/jquery.min.js"></script>
+    <script type="text/javascript" src="Love_files/jscex.min.js"></script>
+    <script type="text/javascript" src="Love_files/jscex-parser.js"></script>
+    <script type="text/javascript" src="Love_files/jscex-jit.js"></script>
+    <script type="text/javascript" src="Love_files/jscex-builderbase.min.js"></script>
+    <script type="text/javascript" src="Love_files/jscex-async.min.js"></script>
+    <script type="text/javascript" src="Love_files/jscex-async-powerpack.min.js"></script>
+    <script type="text/javascript" src="Love_files/functions.js" charset="utf-8"></script>
+    <script type="text/javascript" src="Love_files/love.js" charset="utf-8"></script>
 </head>
 
 <body>
@@ -30,13 +30,13 @@
             <div id="text">
                 <div id="code">
                     <span class="say">Para el amor de mi vida Iren:</span><br><br>
-                    <span class="say">Un mes de aprender que el amor no es perfección, sino intentarlo. A veces me asalta el miedo a arruinarlo todo, a no estar a la altura... Pero prometo que, si tú me das tiempo, yo te daré razones para quedarte.</span>
-                    <span class="say"><span class="space"></span> — Te quiero demasiado y no es aniversario, es solo un recordatorio: sigo eligiéndote, como el primer día !</span>
+                    <span class="say">Me haces soñar con un hogar, risas compartidas y un amor que crece con el tiempo.</span>
+                    <span class="say">Cada vez que te miro, veo no solo a la mujer que amo, sino a la compañera con la que quiero compartir mi vida.</span>
                 </div>
             </div>
             <div id="clock-box">
-                <a href="https://alexxdev.vercel.app/" target="_blank">Mi amor</a>
-                <a href="https://alexxdev.vercel.app/" target="_blank">por ti</a> comenzó hace...
+                <a target="_blank">Mi amor</a>
+                <a target="_blank">por ti</a> comenzó hace...
                 <div id="clock"></div>
             </div>
 
@@ -46,6 +46,72 @@
     
         <audio preload="auto" autoplay="" id="media" src="love.mp3" autoplay preload loop="loop"></audio>
         <script src="script.js"></script>
+
+<audio id="romanticAudio" src="love.mp3" preload="auto"></audio>
+
+
+<style>
+#playButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #e91e63;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  z-index: 9999;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+</style>
+<button id="playButton" title="Reproducir música">💖</button>
+
+
+<style>
+#romanticNote {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,0.95);
+  border-radius: 20px;
+  padding: 12px 24px;
+  font-size: 18px;
+  color: #c2185b;
+  font-family: 'Cursive', sans-serif;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 9998;
+  animation: fadeOut 6s forwards;
+}
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  70% { opacity: 1; }
+  100% { opacity: 0; display: none; }
+}
+</style>
+<div id="romanticNote">Esta canción es para ti 💗 porque cada día contigo florece como este árbol 🌸 Esta canción ya era hermosa… pero desde que te conocí, cada palabra tiene tu nombre.</div>
+
+
+<script>
+document.getElementById("playButton").addEventListener("click", function() {
+    const audio = document.getElementById("romanticAudio");
+    audio.play().then(() => {
+        document.getElementById("playButton").style.display = "none";
+    }).catch(err => {
+        alert("No se pudo reproducir el audio automáticamente. Intenta tocar la pantalla.");
+    });
+});
+</script>
+
 </body>
 
 </html>
